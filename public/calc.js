@@ -19,7 +19,9 @@ function run() {
   //create event listener for number buttons
   $('.number').click(function(e) {
     var num = $(this).attr("id");
-
+    if (num === 'decimal') {
+      num = '.';
+    }
 
     if (clearDisplay === false) {
       dispNum = $('#display').text() + num;
@@ -29,16 +31,14 @@ function run() {
       dispNum = $('#display').text() + num;
       $('#display').text(dispNum);
       clearDisplay = false;
-
     }
   });
-
 
 
   //create event listeners for operations
   $('.operator').click(function(e) {
     operator = $(this).attr("id");
-    operands.push(parseInt(dispNum));
+    operands.push(parseFloat(dispNum));
     dispNum = 0;
     clearDisplay = true;
 
@@ -62,7 +62,6 @@ function run() {
           break;
       }
       $('#display').text(result);
-
     }
   });
 }
