@@ -7,13 +7,14 @@
   <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
   <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
   <script>
     mocha.ui('bdd');
     mocha.reporter('html');
     var expect = chai.expect;
   </script>
   <script src="spec/test.js"></script>
-  <script src="public/calc.js"></script>
   <script src="public/run.js"></script>
   <script>
     window.addEventListener('load', function() {
@@ -22,10 +23,11 @@
   </script>
 
   <!-- Production Dependencies -->
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
 
   <!-- Your Calculator JS -->
-
+  <script src="public/calc.js"></script>
 </head>
 <body>
 
@@ -34,7 +36,7 @@
       <td colspan="4" id="display"></td>
     </tr>
     <tr id = "row2">
-      <td class="operator" id="clear">C</td>
+      <td class="clear" id="clear">C</td>
       <td>+/-</td>
       <td>%</td>
       <td class="operator" id="divide">/</td>
