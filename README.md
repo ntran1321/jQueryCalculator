@@ -1,1 +1,1 @@
-This is my week 11 project for Skill Distillery. The calculator was created using JavaScript and the jQuery library.
+This is my week 11 project for Skill Distillery. This simple calculator was created using JavaScript and the jQuery library. The user is able to perform simple calculations by clicking the screen or by inputting numbers from the keyboard. This project was a demonstration of using JS to create a dynamic webpage by manipulating the DOM. 
