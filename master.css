@@ -1,0 +1,24 @@
+* {
+  font-family: sans-serif;
+}
+
+#display {
+  background-color: #F9F3E6;
+  text-align: right;
+  color: black;
+}
+
+.operator {
+  background-color: #E8AA8C;
+}
+td {
+    padding: 15px;
+    text-align: center;
+    background-color: #E2DCD5;
+}
+
+table {
+  border-color: #7A9EB1;
+  width: 30%;
+  height: 60%;
+}
