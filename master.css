@@ -22,3 +22,8 @@ table {
   width: 30%;
   height: 60%;
 }
+
+td:hover {
+  background-color: #a4e2e8;
+  border: 2px solid black;
+}

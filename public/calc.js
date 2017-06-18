@@ -1,8 +1,10 @@
 $(document).ready(function() {
   run();
+
 });
 
 function run() {
+  var num = '';
   var dispNum = '';
   var operands = [];
   var operator = '';
@@ -12,24 +14,48 @@ function run() {
   //create event listener for clear button
   var clear = $('#clear');
   clear.click(function(e) {
-    $('#display').text('');
+    displayToScreen('');
     operands = [];
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.keyCode === 190) {
+      num = '.';
+    }
+    if (e.keyCode === 8) {
+      console.log("backspace clickd")
+      console.log("dispNum" + dispNum);
+      dispNum = $('#display').text().slice(0,-1);
+      displayToScreen(dispNum.slice(0,-1));
+    }
+    if(e.keyCode >= 48 && e.keyCode <= 57){
+      num = e.key;
+    }
+    if (clearDisplay === false) {
+      dispNum = $('#display').text() + num;
+      displayToScreen(dispNum);
+    } else if (clearDisplay === true) {
+      $('#display').text('');
+      dispNum = $('#display').text() + num;
+      displayToScreen(dispNum);
+      clearDisplay = false;
+    }
   });
 
   //create event listener for number buttons
   $('.number').click(function(e) {
-    var num = $(this).attr("id");
+    num = $(this).attr("id");
     if (num === 'decimal') {
       num = '.';
     }
 
     if (clearDisplay === false) {
       dispNum = $('#display').text() + num;
-      $('#display').text(dispNum);
+      displayToScreen(dispNum);
     } else if (clearDisplay === true) {
       $('#display').text('');
       dispNum = $('#display').text() + num;
-      $('#display').text(dispNum);
+      displayToScreen(dispNum);
       clearDisplay = false;
     }
   });
@@ -61,7 +87,11 @@ function run() {
           result = operands[0] + operands[1];
           break;
       }
-      $('#display').text(result);
+      displayToScreen(result);
     }
   });
+}
+
+function displayToScreen(numbers){
+  $('#display').text(numbers);
 }
